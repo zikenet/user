@@ -1,1 +1,2 @@
-# astro_config
+# Astrovim user configs
+
