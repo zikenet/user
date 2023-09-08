@@ -9,6 +9,21 @@ return {
   --     require("lsp_signature").setup()
   --   end,
   --   }
+  -- {
+  --   "akinsho/bufferline.nvim",
+  --   version = "*",
+  --   event = "User AstroFile",
+  --   cmd = { "Bufferline" },
+  --   opts = {},
+  --   dependencies = "nvim-tree/nvim-web-devicons",
+  -- },
+  {
+    "folke/todo-comments.nvim",
+    dependencies = { "nvim-lua/plenary.nvim" },
+    opts = {},
+    event = "User AstroFile",
+    cmd = { "TodoQuickFix" },
+  },
   {
     "catppuccin/nvim",
     name = "catppuccin",

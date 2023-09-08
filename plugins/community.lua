@@ -9,7 +9,10 @@ return {
   { import = "astrocommunity.pack.typescript-deno" },
   { import = "astrocommunity.pack.html-css" },
   { import = "astrocommunity.pack.python" },
-  -- { import = "astrocommunity.pack.php" },
+  { import = "astrocommunity.pack.go" },
+  { import = "astrocommunity.pack.astro" },
   { import = "astrocommunity.pack.dart" },
+  { import = "astrocommunity.fuzzy-finder" },
+  -- { import = "astrocommunity.pack.dart" },
   -- { import = "astrocommunity.completion.copilot-lua-cmp" },
 }
