@@ -18,16 +18,25 @@ return {
     --   desc = "Previous buffer",
     -- },
     -- ["<leader>th"] = { "<cmd>ToggleTerm size=10 direction=horizontal<cr>", desc = "ToggleTerm horizontal split" },
-    ["<leader>th1"] = { "<cmd>1ToggleTerm size=15 direction=horizontal<cr>", desc = "ToggleTerm horizontal split 1" },
-    ["<leader>th2"] = { "<cmd>2ToggleTerm size=15 direction=horizontal<cr>", desc = "ToggleTerm horizontal split 2" },
-    ["<leader>th3"] = { "<cmd>3ToggleTerm size=15 direction=horizontal<cr>", desc = "ToggleTerm horizontal split 3" },
-    ["<leader>tv1"] = { "<cmd>1ToggleTerm size=80 direction=vertical<cr>", desc = "ToggleTerm vertical split 1" },
-    ["<leader>tv2"] = { "<cmd>2ToggleTerm size=80 direction=vertical<cr>", desc = "ToggleTerm vertical split 2" },
-    ["<leader>tv3"] = { "<cmd>3ToggleTerm size=80 direction=vertical<cr>", desc = "ToggleTerm vertical split 3" },
-
+    -- ["<leader>th1"] = { "<cmd>1ToggleTerm size=15 direction=horizontal<cr>", desc = "ToggleTerm horizontal split 1" },
+    -- ["<leader>th2"] = { "<cmd>2ToggleTerm size=15 direction=horizontal<cr>", desc = "ToggleTerm horizontal split 2" },
+    -- ["<leader>th3"] = { "<cmd>3ToggleTerm size=15 direction=horizontal<cr>", desc = "ToggleTerm horizontal split 3" },
+    -- ["<leader>tv1"] = { "<cmd>1ToggleTerm size=80 direction=vertical<cr>", desc = "ToggleTerm vertical split 1" },
+    -- ["<leader>tv2"] = { "<cmd>2ToggleTerm size=80 direction=vertical<cr>", desc = "ToggleTerm vertical split 2" },
+    -- ["<leader>tv3"] = { "<cmd>3ToggleTerm size=80 direction=vertical<cr>", desc = "ToggleTerm vertical split 3" },
+    --
     -- mappings for lspsega
     -- [] = ("n", "<C-j>", "<Cmd>Lspsaga diagnostic_jump_next<CR>", opts),
     -- [] = ("n", "gl", "<Cmd>Lspsaga show_line_diagnostics<CR>", opts),
+    -- [] = ("n", "gl", "<Cmd>Lspsaga show_line_diagnostics<CR>", opts),
+    --
+    -- Increment/Decrement
+    ["+"] = { "<C-a>" },
+    ["-"] = { "<C-x>" },
+
+    -- Neotree float
+    ["<leader>e"] = { "<Cmd>Neotree float<CR>", desc = "Toggle Explorer" },
+
     ["<leader>gd"] = { "<Cmd>Lspsaga hover_doc<CR>", desc = "Hover Doc" },
     ["<leader>lp"] = { "<Cmd>Lspsaga finder<CR>", desc = "Lspsaga Finder" },
     -- [] = ("n", "gt", "<Cmd>Lspsaga goto_type_definition<CR>", opts),
@@ -35,6 +44,22 @@ return {
     ["<leader>lH"] = { "<Cmd>Lspsaga peek_definition<CR>", desc = "Peek Definition" },
     ["<leader>bb"] = { "<Cmd>Telescope buffers<CR>", desc = "Select Buffer" },
     ["<leader>T"] = { "<Cmd>TodoTelescope<CR>", desc = "Open TODOs in Telescope" },
+
+    -- Telescope
+    ["<leader>fs"] = {
+      function()
+        local builtin = require "telescope.builtin"
+        builtin.treesitter()
+      end,
+      desc = "Lists Function names, variables, from Treesitter",
+    },
+    ["<leader>fd"] = {
+      function()
+        local builtin = require "telescope.builtin"
+        builtin.diagnostics()
+      end,
+      desc = "Find Diagnostics",
+    },
 
     --  Bufferline  mappings
     ["<Tab>"] = { "<Cmd>bnext<CR>" },
@@ -52,6 +77,7 @@ return {
     -- tables with the `name` key will be registered with which-key if it's installed
     -- this is useful for naming menus
     ["<leader>b"] = { name = "Buffers" },
+    -- Select all
     ["<C-a>"] = { "gg<S-V>G" },
     -- quick save
     -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command

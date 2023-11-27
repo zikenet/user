@@ -17,8 +17,15 @@ return {
     end,
   },
   {
-    "akinsho/toggleterm.nvim",
-    opts = function(_, opts) opts.shell = "pwsh" end,
+    "folke/noice.nvim",
+    opts = function(_, opts)
+      opts.routes = {
+        {
+          filter = {event = "notify", find = "No information available"},
+          opts = { skip = true},
+        }
+      }
+    end,
   },
   -- You can disable default plugins as follows:
   -- { "max397574/better-escape.nvim", enabled = false },

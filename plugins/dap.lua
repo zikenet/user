@@ -1,6 +1,6 @@
 return {
-  {
-    "mfussenegger/nvim-dap",
-    enabled = true,
-  },
+  -- {
+  --   "mfussenegger/nvim-dap",
+  --   enabled = true,
+  -- },
 }

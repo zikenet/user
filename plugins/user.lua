@@ -25,6 +25,18 @@ return {
     cmd = { "TodoQuickFix" },
   },
   {
+    "nvim-telescope/telescope-file-browser.nvim",
+    dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
+    keys = {
+      {
+        "<leader>fB",
+        ":Telescop file_browser path=%:p:h=%:p:h<cr>",
+        desc = "Browse Files",
+      },
+    },
+    config = function() require("telescope").load_extension "file_browser" end,
+  },
+  {
     "catppuccin/nvim",
     name = "catppuccin",
     priority = 1000,
@@ -61,7 +73,6 @@ return {
           operators = {},
         },
         color_overrides = {},
-        custom_highlights = {},
         integrations = {
           cmp = true,
           gitsigns = true,
