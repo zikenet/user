@@ -35,7 +35,7 @@ return {
     ["-"] = { "<C-x>" },
 
     -- Neotree float
-    ["<leader>e"] = { "<Cmd>Neotree float<CR>", desc = "Toggle Explorer" },
+    ["<leader>e"] = { "<Cmd>Neotree float toggle<CR>", desc = "Toggle Explorer" },
 
     ["<leader>gd"] = { "<Cmd>Lspsaga hover_doc<CR>", desc = "Hover Doc" },
     ["<leader>lp"] = { "<Cmd>Lspsaga finder<CR>", desc = "Lspsaga Finder" },
