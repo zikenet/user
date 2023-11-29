@@ -4,6 +4,17 @@
 -- lower level configuration and more robust one. (which-key will
 -- automatically pick-up stored data by this setting.)
 return {
+  x = {
+    ["J"] = {":move '>+1<CR>gv-gv"},
+    ["K"] = {":move '<-2<CR>gv-gv"},
+  },
+  v = {
+    ["<"] = {"<gv"},
+    [">"] = {">gv"},
+    ["<A-j>"] = {":m .+1<CR>=="},
+    ["<A-k>"] = {":m .-2<CR>=="},
+    ["p"] = {'"_dP'},
+  },
   -- first key is the mode
   n = {
     -- second key is the lefthand side of the map
@@ -39,7 +50,7 @@ return {
 
     ["<leader>gd"] = { "<Cmd>Lspsaga hover_doc<CR>", desc = "Hover Doc" },
     ["<leader>lp"] = { "<Cmd>Lspsaga finder<CR>", desc = "Lspsaga Finder" },
-    -- [] = ("n", "gt", "<Cmd>Lspsaga goto_type_definition<CR>", opts),
+    --[] = ("n", "gt", "<Cmd>Lspsaga goto_type_definition<CR>", opts),
     -- [] = ("i", "<C-k>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts),
     ["<leader>lH"] = { "<Cmd>Lspsaga peek_definition<CR>", desc = "Peek Definition" },
     ["<leader>bb"] = { "<Cmd>Telescope buffers<CR>", desc = "Select Buffer" },
