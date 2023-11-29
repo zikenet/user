@@ -5,15 +5,15 @@
 -- automatically pick-up stored data by this setting.)
 return {
   x = {
-    ["J"] = {":move '>+1<CR>gv-gv"},
-    ["K"] = {":move '<-2<CR>gv-gv"},
+    ["J"] = { ":move '>+1<CR>gv-gv" },
+    ["K"] = { ":move '<-2<CR>gv-gv" },
   },
   v = {
-    ["<"] = {"<gv"},
-    [">"] = {">gv"},
-    ["<A-j>"] = {":m .+1<CR>=="},
-    ["<A-k>"] = {":m .-2<CR>=="},
-    ["p"] = {'"_dP'},
+    ["<"] = { "<gv" },
+    [">"] = { ">gv" },
+    ["<A-j>"] = { ":m .+1<CR>==" },
+    ["<A-k>"] = { ":m .-2<CR>==" },
+    ["p"] = { '"_dP' },
   },
   -- first key is the mode
   n = {
@@ -73,8 +73,14 @@ return {
     },
 
     --  Bufferline  mappings
-    ["<Tab>"] = { "<Cmd>bnext<CR>" },
-    ["<S-Tab>"] = { "<Cmd>bprev<CR>" },
+    ["<Tab>"] = {
+      function() require("astronvim.utils.buffer").nav(vim.v.count > 0 and vim.v.count or 1) end,
+      desc = "Next buffer",
+    },
+    ["<S-Tab>"] = {
+      function() require("astronvim.utils.buffer").nav(-(vim.v.count > 0 and vim.v.count or 1)) end,
+      desc = "Previous buffer",
+    },
     --
     -- mappings seen under group name "Buffer"
     ["<leader>bD"] = {
