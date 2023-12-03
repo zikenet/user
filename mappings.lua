@@ -4,15 +4,19 @@
 -- lower level configuration and more robust one. (which-key will
 -- automatically pick-up stored data by this setting.)
 return {
+  -- Move group Visual-Bloc
   x = {
     ["J"] = { ":move '>+1<CR>gv-gv" },
     ["K"] = { ":move '<-2<CR>gv-gv" },
   },
   v = {
+    -- Indentation hold for visual mode
     ["<"] = { "<gv" },
     [">"] = { ">gv" },
     ["<A-j>"] = { ":m .+1<CR>==" },
     ["<A-k>"] = { ":m .-2<CR>==" },
+
+    -- Disable copy when pasting
     ["p"] = { '"_dP' },
   },
   -- first key is the mode
@@ -48,11 +52,14 @@ return {
     -- Neotree float
     ["<leader>e"] = { "<Cmd>Neotree float toggle<CR>", desc = "Toggle Explorer" },
 
+    -- Doc and Implementation
     ["<leader>gd"] = { "<Cmd>Lspsaga hover_doc<CR>", desc = "Hover Doc" },
     ["<leader>lp"] = { "<Cmd>Lspsaga finder<CR>", desc = "Lspsaga Finder" },
+    ["<leader>lH"] = { "<Cmd>Lspsaga peek_definition<CR>", desc = "Peek Definition" },
     --[] = ("n", "gt", "<Cmd>Lspsaga goto_type_definition<CR>", opts),
     -- [] = ("i", "<C-k>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts),
-    ["<leader>lH"] = { "<Cmd>Lspsaga peek_definition<CR>", desc = "Peek Definition" },
+
+    -- Buffers
     ["<leader>bb"] = { "<Cmd>Telescope buffers<CR>", desc = "Select Buffer" },
     ["<leader>T"] = { "<Cmd>TodoTelescope<CR>", desc = "Open TODOs in Telescope" },
 
@@ -94,6 +101,7 @@ return {
     -- tables with the `name` key will be registered with which-key if it's installed
     -- this is useful for naming menus
     ["<leader>b"] = { name = "Buffers" },
+
     -- Select all
     ["<C-a>"] = { "gg<S-V>G" },
     -- quick save
