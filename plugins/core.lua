@@ -21,10 +21,11 @@ return {
     opts = function(_, opts)
       opts.routes = {
         {
-          filter = {event = "notify", find = "No information available"},
-          opts = { skip = true},
-        }
+          filter = { event = "notify", find = "No information available" },
+          opts = { skip = true },
+        },
       }
+      opts.presets.lsp_doc_border = true
     end,
   },
   -- You can disable default plugins as follows:
